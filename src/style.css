@@ -1,3 +1,5 @@
+@import "tailwindcss" layer(utilities);
+
 /* ==========================================================================
    MAGNO Alta Relojería - Estilos Globales y Componentes de Lujo
    ========================================================================== */
@@ -6,32 +8,41 @@
 :root {
   /* Colores principales */
   --color-bg-pure: #000000;
-  --color-bg: #0a0908;          /* Onyx cálido y profundo */
-  --color-bg-card: #12100e;     /* Café carbón para contenedores */
+  --color-bg: #0a0908;
+  /* Onyx cálido y profundo */
+  --color-bg-card: #12100e;
+  /* Café carbón para contenedores */
   --color-bg-nav: rgba(10, 9, 8, 0.85);
-  
+
   /* Textos */
-  --color-text: #f4f3f0;        /* Alabastro suave, evita blanco puro estridente */
-  --color-text-muted: #9e9b95;  /* Gris arena */
-  
+  --color-text: #f4f3f0;
+  /* Alabastro suave, evita blanco puro estridente */
+  --color-text-muted: #9e9b95;
+  /* Gris arena */
+
   /* Dorados en escala oklch para mantener croma y luminosidad consistentes */
-  --color-gold-light: oklch(0.85 0.11 85); /* #ebd092 (Champagne brillante) */
-  --color-gold: oklch(0.78 0.13 85);       /* #dfbc6c (Oro central) */
-  --color-gold-dark: oklch(0.55 0.10 85);  /* #9a7f3f (Bronce satinado) */
+  --color-gold-light: oklch(0.85 0.11 85);
+  /* #ebd092 (Champagne brillante) */
+  --color-gold: oklch(0.78 0.13 85);
+  /* #dfbc6c (Oro central) */
+  --color-gold-dark: oklch(0.55 0.10 85);
+  /* #9a7f3f (Bronce satinado) */
   --color-gold-glow: rgba(223, 188, 108, 0.2);
   --color-gold-border: rgba(223, 188, 108, 0.15);
 
   /* Fuentes */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Jost', sans-serif;
-  
+
   /* Transiciones */
   --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   --transition-fast: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Reset General */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -78,7 +89,12 @@ body {
 }
 
 /* Tipografía Editorial */
-h1, h2, h3, h4, .logo-text, .preloader-logo {
+h1,
+h2,
+h3,
+h4,
+.logo-text,
+.preloader-logo {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -184,7 +200,8 @@ a {
   color: var(--color-text);
   letter-spacing: 0.4em;
   margin-bottom: 2rem;
-  margin-left: 0.4em; /* Compensar espaciado de letras */
+  margin-left: 0.4em;
+  /* Compensar espaciado de letras */
   animation: logoPulse 2.5s infinite ease-in-out;
 }
 
@@ -215,8 +232,17 @@ a {
 }
 
 @keyframes logoPulse {
-  0%, 100% { opacity: 0.5; transform: scale(0.98); }
-  50% { opacity: 1; transform: scale(1); }
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Ocultar contenido mientras precarga */
@@ -324,8 +350,13 @@ a {
   transition: var(--transition-fast);
 }
 
-.menu-line:first-child { top: 0; }
-.menu-line:last-child { bottom: 0; }
+.menu-line:first-child {
+  top: 0;
+}
+
+.menu-line:last-child {
+  bottom: 0;
+}
 
 .mobile-menu-toggle.active .menu-line:first-child {
   transform: translateY(9.5px) rotate(45deg);
@@ -417,7 +448,8 @@ a {
 
 .hero-text-side {
   position: relative;
-  height: 400px; /* Contenedor de altura fija para albergar los pasos absolutos */
+  height: 400px;
+  /* Contenedor de altura fija para albergar los pasos absolutos */
   display: flex;
   align-items: center;
 }
@@ -557,10 +589,23 @@ a {
 }
 
 @keyframes wheelScroll {
-  0% { opacity: 0; transform: translate(-50%, 0); }
-  30% { opacity: 1; }
-  80% { opacity: 0; transform: translate(-50%, 8px); }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ==========================================================================
@@ -647,7 +692,7 @@ a {
   height: 100%;
   object-fit: contain;
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
 }
 
 .catalog-card:hover .card-img {
@@ -826,7 +871,7 @@ a {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-gold-border);
   padding: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   max-width: 280px;
 }
 
@@ -858,7 +903,7 @@ a {
    SECCIÓN 4: POR QUÉ ELEGIRNOS
    ========================================================================== */
 .values-section {
-  padding: 8rem 0;
+  padding: 5rem 0 0 0;
   background-color: var(--color-bg);
   position: relative;
   z-index: 5;
@@ -867,13 +912,60 @@ a {
 .values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  gap: 1rem;
+  padding: 3rem 0;
+}
+
+.values-showcase {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.values-video-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(223, 188, 108, 0.05);
+}
+
+.values-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 30%, rgba(10, 9, 8, 0.4) 100%);
+  pointer-events: none;
+}
+
+.values-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.values-content-container .section-header {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.values-content-container .section-divider {
+  margin: 1.5rem 0 0 0;
 }
 
 .values-manifesto {
-  max-width: 820px;
-  margin: 0 auto 5rem auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
@@ -944,7 +1036,7 @@ a {
    SECCIÓN 5: CONTACTO / RESERVAR CITA
    ========================================================================== */
 .contact-section {
-  padding: 10rem 0;
+  padding: 5rem 0 5rem 0;
   background-color: var(--color-bg-pure);
   position: relative;
   z-index: 5;
@@ -1009,7 +1101,7 @@ a {
   background-color: var(--color-bg-card);
   border: 1px solid rgba(223, 188, 108, 0.05);
   padding: 4rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .contact-form {
@@ -1039,7 +1131,9 @@ a {
   font-weight: 500;
 }
 
-.form-input, .form-textarea, .form-select {
+.form-input,
+.form-textarea,
+.form-select {
   background-color: rgba(255, 255, 255, 0.02);
   border: none;
   border-bottom: 1px solid rgba(244, 243, 240, 0.15);
@@ -1070,7 +1164,9 @@ a {
   color: var(--color-text);
 }
 
-.form-input:focus, .form-textarea:focus, .form-select:focus {
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
   border-bottom-color: var(--color-gold);
   background-color: rgba(223, 188, 108, 0.02);
 }
@@ -1229,15 +1325,19 @@ a {
   .navbar-container {
     padding: 0 2rem;
   }
+
   .section-container {
     padding: 0 2rem;
   }
+
   .hero-grid {
     padding: 0 2rem;
   }
+
   .catalog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1250,89 +1350,157 @@ a {
     background-color: var(--color-bg);
     border-bottom: 1px solid rgba(223, 188, 108, 0.05);
   }
-  
-  .nav-links, .nav-cta {
-    display: none; /* Ocultar en tablets y móviles para dar paso al menú hambuguesa */
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+    /* Ocultar en tablets y móviles para dar paso al menú hambuguesa */
   }
-  
+
   .mobile-menu-toggle {
     display: block;
   }
-  
+
   /* Rediseño Hero para móviles */
   .hero-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr; /* Canvas arriba, textos abajo */
+    grid-template-rows: auto 1fr;
+    /* Canvas arriba, textos abajo */
     gap: 2rem;
-    padding-top: 100px; /* Espacio para el navbar */
+    padding-top: 100px;
+    /* Espacio para el navbar */
     align-items: flex-start;
   }
-  
+
   .hero-canvas-side {
     height: 40vh;
-    order: -1; /* Forzar que el canvas aparezca arriba */
+    order: -1;
+    /* Forzar que el canvas aparezca arriba */
   }
-  
+
   .hero-canvas-side canvas {
     height: 100%;
     max-height: 38vh;
   }
-  
+
   .hero-text-side {
     height: 300px;
     align-items: flex-start;
   }
-  
+
   .hero-step {
     top: 0;
     transform: none;
   }
-  
+
   .hero-step-title {
     font-size: 2.2rem;
     margin-bottom: 1rem;
   }
-  
+
   .hero-step-desc {
     font-size: 1rem;
   }
-  
+
   .canvas-ambient-glow {
     width: 250px;
     height: 250px;
   }
-  
+
   /* Otras secciones */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
   .about-image-side {
     height: 400px;
   }
-  
+
   .about-image-overlay-card {
     bottom: -1rem;
     left: 1rem;
     padding: 1.5rem;
     max-width: 240px;
   }
-  
+
   .huge-number {
     font-size: 3rem;
   }
-  
+
+  /* Rediseño de la sección de valores para móviles */
+  .values-showcase {
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+    padding: 6rem 2.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--color-gold-border);
+    margin-bottom: 4rem;
+    background-color: rgba(10, 9, 8, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  }
+
+  .values-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .values-video {
+    opacity: 0.22;
+    filter: brightness(0.6) contrast(1.1);
+  }
+
+  .video-overlay-glow {
+    background: linear-gradient(0deg, rgba(10, 9, 8, 0.95) 0%, rgba(10, 9, 8, 0.6) 50%, rgba(10, 9, 8, 0.95) 100%);
+    z-index: 2;
+  }
+
+  .values-content-container {
+    position: relative;
+    z-index: 3;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .values-content-container .section-header {
+    text-align: center;
+  }
+
+  .values-content-container .section-divider {
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .values-content-container .values-manifesto {
+    text-align: center;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
+  .values-section {
+    padding: 5rem 0 0 0;
+  }
+
+  .contact-section {
+    padding: 0 0 5rem 0;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
@@ -1345,41 +1513,42 @@ a {
   .section-container {
     padding: 0 1.5rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .hero-step-title {
     font-size: 1.8rem;
   }
-  
+
   .catalog-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .values-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
-  .about-title, .contact-title {
+
+  .about-title,
+  .contact-title {
     font-size: 2.2rem;
   }
-  
+
   .contact-form-side {
     padding: 2.5rem 1.5rem;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .about-image-side {
     height: 300px;
   }
-  
+
   .about-image-overlay-card {
     left: 50%;
     transform: translateX(-50%);
@@ -1392,7 +1561,10 @@ a {
 
 /* Desactivar animaciones para usuarios que prefieren reducir el movimiento */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
@@ -1401,12 +1573,12 @@ a {
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }
-  
+
   .char {
     opacity: 1 !important;
     color: var(--color-text) !important;
   }
-  
+
   .hero-step {
     position: relative !important;
     transform: none !important;
@@ -1414,12 +1586,12 @@ a {
     display: block !important;
     margin-bottom: 3rem;
   }
-  
+
   .hero-text-side {
     height: auto !important;
     display: block !important;
   }
-  
+
   .hero-section {
     height: auto !important;
   }

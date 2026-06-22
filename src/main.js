@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // URLs de los Assets de Reloj (Confirmados en formato .jpg y .png)
 const frameUrls = [];
-for (let i = 1; i <= 51; i++) {
+for (let i = 1; i <= 77; i++) {
   const frameStr = String(i).padStart(3, '0');
   frameUrls.push(`/assets/reloj_images/ezgif-frame-${frameStr}.jpg`);
 }
@@ -337,7 +337,7 @@ function initHeroTimeline() {
   
   // 4a. Secuencia de frames del canvas vinculada al scroll completo
   tl.to(animState, {
-    frame: 50,
+    frame: 76,
     duration: 1.16, // cubre hasta el fin del último tipo (0.97 + 0.14 + holgura)
     ease: 'none',
     onUpdate: () => {
@@ -494,45 +494,7 @@ function initScrollAnimations() {
     ease: 'power2.out'
   });
   
-  // 5c. Animación "El Estándar MAGNO" — header, manifiesto y cards
-  gsap.from('.values-section .section-header > *', {
-    scrollTrigger: {
-      trigger: '.values-section',
-      start: 'top 80%',
-      toggleActions: 'play none none none'
-    },
-    opacity: 0,
-    y: 20,
-    duration: 0.7,
-    stagger: 0.12,
-    ease: 'power2.out'
-  });
-
-  gsap.from('.values-manifesto-p', {
-    scrollTrigger: {
-      trigger: '.values-manifesto',
-      start: 'top 85%',
-      toggleActions: 'play none none none'
-    },
-    opacity: 0,
-    y: 24,
-    duration: 0.9,
-    stagger: 0.18,
-    ease: 'power2.out'
-  });
-
-  gsap.from('.value-card', {
-    scrollTrigger: {
-      trigger: '.values-grid',
-      start: 'top 85%',
-      toggleActions: 'play none none none'
-    },
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power2.out'
-  });
+  // 5c. Sección "El Estándar MAGNO" — sin animación, elementos estáticos
   
   // 5d. Animación "Contacto"
   gsap.from('.contact-info > *', {
