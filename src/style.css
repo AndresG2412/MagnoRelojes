@@ -778,6 +778,165 @@ a {
   transform: translateX(4px);
 }
 
+/* Botón grande de catálogo */
+.catalog-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.btn-catalog {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 3.5rem;
+  background: linear-gradient(135deg, rgba(223, 188, 108, 0.08) 0%, rgba(223, 188, 108, 0.02) 100%);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: var(--transition-smooth);
+  animation: catalogPulse 3s infinite ease-in-out;
+}
+
+.btn-catalog:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(135deg, rgba(223, 188, 108, 0.15) 0%, rgba(223, 188, 108, 0.05) 100%);
+  box-shadow: 0 20px 50px rgba(223, 188, 108, 0.2), 0 0 80px rgba(223, 188, 108, 0.08);
+  animation: none;
+}
+
+/* Borde animado dorado */
+.btn-catalog-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-gold-dark);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-catalog:hover .btn-catalog-border {
+  border-color: var(--color-gold);
+  box-shadow: inset 0 0 20px rgba(223, 188, 108, 0.1);
+}
+
+/* Efecto shimmer que pasa por el botón */
+.btn-catalog-shimmer {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(223, 188, 108, 0.05) 25%,
+    rgba(223, 188, 108, 0.15) 50%,
+    rgba(223, 188, 108, 0.05) 75%,
+    transparent 100%
+  );
+  animation: shimmerSlide 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.btn-catalog:hover .btn-catalog-shimmer {
+  animation: shimmerSlideFast 1.5s infinite ease-in-out;
+}
+
+@keyframes shimmerSlide {
+  0% { left: -150%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes shimmerSlideFast {
+  0% { left: -150%; }
+  100% { left: 100%; }
+}
+
+@keyframes catalogPulse {
+  0%, 100% {
+    box-shadow: 0 5px 20px rgba(223, 188, 108, 0.05), 0 0 0 rgba(223, 188, 108, 0);
+  }
+  50% {
+    box-shadow: 0 10px 35px rgba(223, 188, 108, 0.12), 0 0 40px rgba(223, 188, 108, 0.06);
+  }
+}
+
+/* Contenido del botón */
+.btn-catalog-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-catalog-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-gold);
+  transition: var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.btn-catalog:hover .btn-catalog-icon {
+  color: var(--color-gold-light);
+  filter: drop-shadow(0 0 6px rgba(223, 188, 108, 0.4));
+}
+
+.btn-catalog-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--color-text);
+  transition: var(--transition-smooth);
+}
+
+.btn-catalog:hover .btn-catalog-label {
+  color: var(--color-gold-light);
+}
+
+.btn-catalog-arrow {
+  width: 22px;
+  height: 22px;
+  color: var(--color-gold-dark);
+  transition: var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.btn-catalog:hover .btn-catalog-arrow {
+  color: var(--color-gold-light);
+  transform: translateX(6px);
+  filter: drop-shadow(0 0 4px rgba(223, 188, 108, 0.5));
+}
+
+/* Responsive del botón catálogo */
+@media (max-width: 575px) {
+  .btn-catalog {
+    padding: 1.3rem 2rem;
+    width: 100%;
+  }
+
+  .btn-catalog-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+  }
+
+  .btn-catalog-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn-catalog-arrow {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 /* ==========================================================================
    SECCIÓN 3: SOBRE MAGNO (EDITORIAL)
    ========================================================================== */
@@ -1051,6 +1210,7 @@ a {
 
 .contact-info {
   max-width: 500px;
+  margin-top: 4rem;
 }
 
 .contact-title {
@@ -1143,6 +1303,7 @@ a {
   font-size: 0.9rem;
   transition: var(--transition-fast);
   outline: none;
+  padding-left: 1rem;
 }
 
 .form-textarea {
@@ -1527,8 +1688,8 @@ a {
   }
 
   .values-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .about-title,
